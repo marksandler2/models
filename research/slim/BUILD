@@ -1,6 +1,8 @@
 # Description:
 #   Contains files for loading, training and evaluating TF-Slim-based models.
 
+# load("//devtools/python/blaze:python3.bzl", "py2and3_test")
+
 package(
     default_visibility = ["//visibility:public"],
 )
@@ -135,7 +137,7 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "model_deploy_test",
     srcs = ["deployment/model_deploy_test.py"],
     srcs_version = "PY2AND3",
@@ -221,7 +223,7 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "alexnet_test",
     size = "medium",
     srcs = ["nets/alexnet_test.py"],
@@ -249,7 +251,7 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "cyclegan_test",
     srcs = ["nets/cyclegan_test.py"],
     shard_count = 3,
@@ -268,7 +270,7 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "dcgan_test",
     srcs = ["nets/dcgan_test.py"],
     shard_count = 3,
@@ -350,7 +352,8 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
+    # Note: python3 test is currently broken
     name = "inception_v1_test",
     size = "large",
     srcs = ["nets/inception_v1_test.py"],
@@ -363,7 +366,7 @@ py_test(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "inception_v2_test",
     size = "large",
     srcs = ["nets/inception_v2_test.py"],
@@ -376,7 +379,7 @@ py_test(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "inception_v3_test",
     size = "large",
     srcs = ["nets/inception_v3_test.py"],
@@ -389,7 +392,7 @@ py_test(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "inception_v4_test",
     size = "large",
     srcs = ["nets/inception_v4_test.py"],
@@ -401,7 +404,7 @@ py_test(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "inception_resnet_v2_test",
     size = "large",
     srcs = ["nets/inception_resnet_v2_test.py"],
@@ -439,7 +442,7 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "mobilenet_v2_test",
     srcs = ["nets/mobilenet/mobilenet_v2_test.py"],
     srcs_version = "PY2AND3",
@@ -457,7 +460,7 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "mobilenet_v1_test",
     size = "large",
     srcs = ["nets/mobilenet_v1_test.py"],
@@ -511,7 +514,7 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "nasnet_utils_test",
     size = "medium",
     srcs = ["nets/nasnet/nasnet_utils_test.py"],
@@ -522,7 +525,7 @@ py_test(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "nasnet_test",
     size = "large",
     srcs = ["nets/nasnet/nasnet_test.py"],
@@ -545,7 +548,7 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "pnasnet_test",
     size = "large",
     srcs = ["nets/nasnet/pnasnet_test.py"],
@@ -566,7 +569,7 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "overfeat_test",
     size = "medium",
     srcs = ["nets/overfeat_test.py"],
@@ -586,7 +589,7 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "pix2pix_test",
     srcs = ["nets/pix2pix_test.py"],
     srcs_version = "PY2AND3",
@@ -615,7 +618,7 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "resnet_v1_test",
     size = "medium",
     srcs = ["nets/resnet_v1_test.py"],
@@ -639,7 +642,7 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "resnet_v2_test",
     size = "medium",
     srcs = ["nets/resnet_v2_test.py"],
@@ -662,7 +665,7 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "vgg_test",
     size = "medium",
     srcs = ["nets/vgg_test.py"],
@@ -682,7 +685,7 @@ py_library(
     ],
 )
 
-py_test(
+py_test(  # py2and3_test
     name = "nets_factory_test",
     size = "medium",
     srcs = ["nets/nets_factory_test.py"],
@@ -731,6 +734,7 @@ py_binary(
 )
 
 py_test(
+    # Note: python3 test is currently broken
     name = "export_inference_graph_test",
     size = "medium",
     srcs = ["export_inference_graph_test.py"],
